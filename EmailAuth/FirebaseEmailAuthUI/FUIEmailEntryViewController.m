@@ -108,6 +108,11 @@ static NSString *const kNextButtonAccessibilityID = @"NextButtonAccessibilityID"
   [_termsOfServiceView useFullMessage];
 
   [self enableDynamicCellHeightForTableView:_tableView];
+    
+  if (@available(iOS 13.0, *)) {
+    _tableView.backgroundColor = [UIColor systemBackgroundColor];
+  }
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {

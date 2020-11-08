@@ -79,6 +79,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property(nonatomic, strong) UIColor *buttonBackgroundColor;
 
+/** @property buttonTextColor
+ @brief The text color that should be used for the sign in button of the provider.
+ */
+@property(nonatomic, readwrite) UIColor *buttonTextColor;
+
 /** @property scopes
     @brief Array used to configure the OAuth scopes.
  */
@@ -163,7 +168,7 @@ NS_ASSUME_NONNULL_BEGIN
                                providerID:@"microsoft.com"
                           buttonLabelText:@"Sign in with Microsoft"
                                 shortName:@"Microsoft"
-                              buttonColor:[UIColor colorWithRed:.18 green:.18 blue:.18 alpha:1.0]
+                              buttonColor:[UIColor whiteColor]
                                 iconImage:[FUIAuthUtils imageNamed:@"ic_microsoft"
                                                fromBundleNameOrNil:@"FirebaseOAuthUI"]
                                    scopes:@[@"user.readwrite"]
@@ -216,7 +221,10 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (UIColor *)buttonTextColor {
-  return [UIColor whiteColor];
+    if ([_providerID isEqualToString:@"apple.com"]) {
+        return [UIColor whiteColor];
+    }
+    return [UIColor colorWithRed: 117.f/255.f green: 117.f/255.f blue: 117.f/255.f alpha: 1.0];
 }
 
 #pragma clang diagnostic push

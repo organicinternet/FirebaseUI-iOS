@@ -152,11 +152,11 @@ static NSString *const kEmailLinkSignInLinkingCredentialKey = @"FIRAuthEmailLink
 }
 
 - (UIColor *)buttonBackgroundColor {
-  return [UIColor colorWithRed:42.f/255.f green:183.f/255.f blue:202.f/255.f alpha:1.0];
+  return [UIColor whiteColor];
 }
 
 - (UIColor *)buttonTextColor {
-  return [UIColor whiteColor];
+  return [UIColor colorWithRed: 117.f/255.f green: 117.f/255.f blue: 117.f/255.f alpha: 1.0];
 }
 
 - (void)signInWithPresentingViewController:(UIViewController *)presentingViewController {
